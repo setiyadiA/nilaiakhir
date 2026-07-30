@@ -53,7 +53,7 @@ if tombol_hitung:
 
     st.divider()
     st.success("Perhitungan Selesai!")
-    st.write("---------------- A.S -----------------")
+    
    
     col_res1, col_res2 = st.columns(2)
     with col_res1:
