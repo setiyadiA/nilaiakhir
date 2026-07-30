@@ -39,34 +39,35 @@ if tombol_hitung:
     # 2. Perhitungan Nilai Akhir Total
     nilai_akhir = val_kehadiran + val_tugas + val_uts + val_uas
 
+    # 3. Penentuan Indeks Nilai berdasarkan rentang gambar
+    if nilai_akhir >= 80:
+        indeks = "A"
+    elif nilai_akhir >= 68:
+        indeks = "B"
+    elif nilai_akhir >= 56:
+        indeks = "C"
+    elif nilai_akhir >= 45:
+        indeks = "D"
+    else:
+        indeks = "E"
+
     st.divider()
     st.success("Perhitungan Selesai!")
 
-    # Tampilan Nilai Akhir secara Menonjol
-    st.metric(
-        label="NILAI AKHIR TOTAL",
-        value=f"{nilai_akhir:.2f}",
-    )
+    # Tampilan Nilai Akhir & Indeks secara Menonjol
+    col_res1, col_res2 = st.columns(2)
+    with col_res1:
+        st.metric(
+            label="NILAI AKHIR TOTAL",
+            value=f"{nilai_akhir:.2f} / 100",
+        )
+    with col_res2:
+        st.metric(
+            label="INDEKS NILAI",
+            value=indeks,
+        )
 
     st.subheader("Rincian Bobot Nilai:")
 
     # Menampilkan rincian perhitungan per komponen
     col1, col2 = st.columns(2)
-
-    with col1:
-        st.write("  **Kehadiran (Bobot 5%)**")
-        st.caption(f"Input: {kehadiran}/16 pertemuan")
-        st.metric(label="Subtotal Kehadiran", value=f"{val_kehadiran:.2f}")
-
-        st.write("  **Nilai Tugas (Bobot 20%)**")
-        st.caption(f"Input: {nilai_tugas:.1f}")
-        st.metric(label="Subtotal Tugas", value=f"{val_tugas:.2f}")
-
-    with col2:
-        st.write("  **Nilai UTS (Bobot 35%)**")
-        st.caption(f"Input: {uts:.1f}")
-        st.metric(label="Subtotal UTS", value=f"{val_uts:.2f}")
-
-        st.write("  **Nilai UAS (Bobot 40%)**")
-        st.caption(f"Input: {uas:.1f}")
-        st.metric(label="Subtotal UAS", value=f"{val_uas:.2f}")
