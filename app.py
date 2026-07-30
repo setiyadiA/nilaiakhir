@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.title("Aplikasi Perhitungan Nilai Akhir")
-st.write("Silakan masukkan nilai-nilai Anda untuk menghitung Nilai Akhir berdasarkan bobot yang ditentukan.")
+
 
 # Form Input
 with st.form(key="form_nilai"):
@@ -67,6 +67,7 @@ if tombol_hitung:
             value=indeks,
         )
 
+st.write("---------------- A.S -----------------")
 
 
 
