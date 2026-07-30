@@ -45,7 +45,7 @@ if tombol_hitung:
     # Tampilan Nilai Akhir secara Menonjol
     st.metric(
         label="NILAI AKHIR TOTAL",
-        value=f"{nilai_akhir:.2f} / 100",
+        value=f"{nilai_akhir:.2f}",
     )
 
     st.subheader("Rincian Bobot Nilai:")
