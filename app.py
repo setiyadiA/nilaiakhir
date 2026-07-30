@@ -69,5 +69,4 @@ if tombol_hitung:
 
     st.subheader("Rincian Bobot Nilai:")
 
-    # Menampilkan rincian perhitungan per komponen
-    col1, col2 = st.columns(2)
+
