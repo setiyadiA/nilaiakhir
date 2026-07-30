@@ -67,6 +67,6 @@ if tombol_hitung:
             value=indeks,
         )
 
-    st.subheader("Rincian Bobot Nilai:")
+
 
 
